@@ -1,0 +1,3 @@
+[alias]
+  keep = "!f() { touch ${1%/}/.gitkeep; }; f"
+  mkdir = "!f() { mkdir $@ && git keep $1; }; f"

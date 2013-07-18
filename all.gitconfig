@@ -1,0 +1,8 @@
+[include]
+  path = shortcuts.gitconfig
+  path = better_log.gitconfig
+  path = navigation.gitconfig
+  path = history.gitconfig
+  path = keep.gitconfig
+  path = status.gitconfig
+  path = viewer.gitconfig
