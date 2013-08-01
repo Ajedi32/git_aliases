@@ -6,3 +6,4 @@
   path = keep.gitconfig
   path = status.gitconfig
   path = viewer.gitconfig
+  path = test_branch.gitconfig
