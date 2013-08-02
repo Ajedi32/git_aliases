@@ -1,5 +1,5 @@
 [alias]
-  branch-do-each = "!f() { if [ $# -lt 3 ]; then echo 'Usage: git branch-do-each <branch> <num_commits> <command>'; exit 1; fi; BRANCH=$1; shift; NUM_BACK=$1; shift; while [ $NUM_BACK -gt 0 ]; do git checkout $BRANCH~$NUM_BACK && $@ || exit 1; let NUM_BACK=NUM_BACK-1; done; git checkout $BRANCH && $@ || exit 1; }; f"
-  branch-test-each = "!f() { git branch-do-each $1 $2 \"`git config alias-settings.test-command`\"; }; f"
+  do-each = "!f() { if [ $# -lt 2 ]; then echo 'Usage: git do-each <base> <command>'; exit 1; fi; ORIGINAL_HEAD=`(git symbolic-ref -q HEAD || git rev-parse HEAD) | cut -d"/" -f 3`; BASE=$1; shift; for COMMIT in `git rev-list HEAD ^$BASE --reverse`; do git checkout $COMMIT && $@ || exit 1; done; git checkout $ORIGINAL_HEAD; }; f"
+  test-each = "!f() { git do-each $1 \"`git config alias-settings.test-command`\"; }; f"
 [alias-settings]
   test-command = "rspec"
