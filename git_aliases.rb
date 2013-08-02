@@ -17,12 +17,12 @@ class GitAliasesInstallation
 
   def uninstall_all
     uninstall_basics
-    system("git", "config", "--global", "--unset-all", "include.path", "#{Regexp.escape(@root)}/.*")
+    system("git", "config", "--global", "--unset-all", "include.path", "#{Regexp.escape(@root)}/aliases/.*")
   end
 
   def install_all
     install_basics
-    system("git", "config", "--global", "include.path", File.join(@root, "all.gitconfig"))
+    system("git", "config", "--global", "include.path", File.join(@root, "aliases", "all.gitconfig"))
   end
 end
 
