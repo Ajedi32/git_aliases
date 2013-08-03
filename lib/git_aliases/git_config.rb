@@ -1,3 +1,5 @@
+require "open3"
+
 module GitAliases
   class GitConfig
     def initialize(scope="global")
@@ -15,7 +17,8 @@ module GitAliases
       unless regex_string.nil?
         run_args << regex_string
       end
-      run_config(*run_args)
+      _, exit_status = run_config(*run_args)
+      return exit_status == 0
     end
 
     def set(key, value, regex_string=nil)
@@ -23,7 +26,8 @@ module GitAliases
       unless regex_string.nil?
         run_args << regex_string
       end
-      run_config(*run_args)
+      _, exit_status = run_config(*run_args)
+      return exit_status == 0
     end
 
     def unset(key, regex_string=nil)
@@ -31,7 +35,8 @@ module GitAliases
       unless regex_string.nil?
         run_args << regex_string
       end
-      run_config(*run_args)
+      _, exit_status = run_config(*run_args)
+      return exit_status == 0
     end
 
     def unset_all(key, regex_string=nil)
@@ -39,13 +44,14 @@ module GitAliases
       unless regex_string.nil?
         run_args << regex_string
       end
-      run_config(*run_args)
+      _, exit_status = run_config(*run_args)
+      return exit_status == 0
     end
 
     private
 
     def run_config(*args)
-      system("git", "config", *@scope, *args)
+      Open3.capture2("git", "config", *@scope, *args)
     end
   end
 end
