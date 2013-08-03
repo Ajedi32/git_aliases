@@ -18,5 +18,19 @@ System Requirements
 Installation
 ------------
 
+To install git_aliases for the first time, change directories to the place where
+you want git_aliases installed and then execute the following commands.
+
 	git clone https://github.com/Ajedi32/git_aliases.git
-	git_aliases/git_aliases.rb install
+	cd git_aliases
+	./git_aliases.rb install
+
+By default, all aliases are installed. If you only want to install some aliases,
+use these commands:
+
+	./git_aliases.rb uninstall all # To uninstall the default aliases
+	./git_aliases.rb install <alias 1> <alais 2> ...
+
+Note: Currently, "all" is treated like a normal alias. As a result, you can't
+uninstall individual aliases that were installed with "all". Instead, you have
+to uninstall "all" and then install the aliases that you want.

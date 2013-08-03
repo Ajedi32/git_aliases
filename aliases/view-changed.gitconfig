@@ -1,0 +1,4 @@
+[alias]
+  view-changed = "!f() { AT_REFERENCE=$1; git diff --name-only ${AT_REFERENCE:-HEAD}~ ${AT_REFERENCE:-HEAD} | xargs `git config alias-config.viewer`; }; f"
+[alias-config]
+  viewer = vi

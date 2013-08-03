@@ -1,3 +1,2 @@
 [alias]
   changed = "!f() { AT_REFERENCE=$1; git diff --name-status ${AT_REFERENCE:-HEAD}~ ${AT_REFERENCE-HEAD}; }; f"
-  conflicts = diff --name-status --diff-filter=U

@@ -1,6 +1,0 @@
-[alias]
-  view-diff = "!f() { timestamp=`date +%s`; git diff $* > \"Temporary Diff $timestamp\" 2>&1 && `git config alias-config.viewer` \"Temporary Diff $timestamp\" && sleep 1 && rm \"Temporary Diff $timestamp\"; }; f"
-  view-changed = "!f() { AT_REFERENCE=$1; git diff --name-only ${AT_REFERENCE:-HEAD}~ ${AT_REFERENCE:-HEAD} | xargs `git config alias-config.viewer`; }; f"
-  view-conflicts = "!f() { git diff --name-only --diff-filter=U | xargs `git config alias-config.viewer`; }; f"
-[alias-config]
-  viewer = vi
