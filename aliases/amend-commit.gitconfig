@@ -1,5 +1,2 @@
 [alias]
-  recommit = commit --amend -C HEAD
   amend-commit = "!f() { START=`(git symbolic-ref -q HEAD || git rev-parse HEAD) | cut -d"/" -f 3`; git checkout -q $1 && git commit --amend && git rebase --onto HEAD $1 $START; }; f"
-  reword = commit --amend
-  patch-to = "!f() { START="`git rev-parse HEAD`"; git reset --keep $1; git reset "$START" --soft; }; f"

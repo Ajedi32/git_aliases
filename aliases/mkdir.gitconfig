@@ -1,0 +1,4 @@
+[alias]
+  mkdir = "!f() { mkdir $@ && git keep $1; }; f"
+[include]
+  path = keep.gitconfig

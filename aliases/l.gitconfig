@@ -1,0 +1,4 @@
+[alias]
+  l = !git --no-pager lg -15
+[include]
+  path = lg.gitconfig

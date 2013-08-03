@@ -1,0 +1,4 @@
+[alias]
+  view-diff = "!f() { timestamp=`date +%s`; git diff $* > \"Temporary Diff $timestamp\" 2>&1 && `git config alias-config.viewer` \"Temporary Diff $timestamp\" && sleep 1 && rm \"Temporary Diff $timestamp\"; }; f"
+[alias-config]
+  viewer = vi

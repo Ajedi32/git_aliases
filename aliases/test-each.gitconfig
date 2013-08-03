@@ -1,0 +1,4 @@
+[alias]
+  test-each = "!f() { git do-each $1 \"`git config alias-config.test-command`\"; }; f"
+[alias-config]
+  test-command = "rspec"

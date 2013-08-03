@@ -1,4 +1,2 @@
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
-  l = !git --no-pager lg -15
-  unpushed = !git --no-pager lg --branches --simplify-by-decoration --not --remotes
