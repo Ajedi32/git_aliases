@@ -1,0 +1,2 @@
+[alias]
+  reword = commit --amend

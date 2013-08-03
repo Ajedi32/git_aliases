@@ -1,0 +1,2 @@
+[alias]
+  conflicts = diff --name-status --diff-filter=U

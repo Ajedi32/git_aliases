@@ -1,5 +1,2 @@
 [alias]
   do-each = "!f() { if [ $# -lt 2 ]; then echo 'Usage: git do-each <base> <command>'; exit 1; fi; ORIGINAL_HEAD=`(git symbolic-ref -q HEAD || git rev-parse HEAD) | cut -d"/" -f 3`; BASE=$1; shift; for COMMIT in `git rev-list HEAD ^$BASE --reverse`; do git checkout $COMMIT && $@ || exit 1; done; git checkout $ORIGINAL_HEAD; }; f"
-  test-each = "!f() { git do-each $1 \"`git config alias-config.test-command`\"; }; f"
-[alias-config]
-  test-command = "rspec"

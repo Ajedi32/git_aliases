@@ -1,4 +1,2 @@
 [alias]
   temp = !git add -A && git commit -m "Temp"
-  pop = reset HEAD~
-  detach = checkout --detach

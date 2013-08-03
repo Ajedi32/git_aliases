@@ -1,0 +1,4 @@
+[alias]
+  unpushed = !git --no-pager lg --branches --simplify-by-decoration --not --remotes
+[include]
+  path = lg.gitconfig
