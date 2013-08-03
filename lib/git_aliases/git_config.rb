@@ -13,45 +13,46 @@ module GitAliases
     end
 
     def exists?(key, regex_string=nil)
-      run_args = ["--get", key]
-      unless regex_string.nil?
-        run_args << regex_string
+      if regex_string
+        result = run_config("--get", key, regex_string)
+      else
+        result = run_config("--get", key)
       end
-      _, exit_status = run_config(*run_args)
-      return exit_status == 0
+      return result[:status] == 0
     end
 
     def set(key, value, regex_string=nil)
-      run_args = [key, value]
-      unless regex_string.nil?
-        run_args << regex_string
+      if regex_string
+        result = run_config(key, value, regex_string)
+      else
+        result = run_config(key, value)
       end
-      _, exit_status = run_config(*run_args)
-      return exit_status == 0
+      return result[:status] == 0
     end
 
     def unset(key, regex_string=nil)
-      run_args = ["--unset", key]
-      unless regex_string.nil?
-        run_args << regex_string
+      if regex_string
+        result = run_config("--unset", key, regex_string)
+      else
+        result = run_config("--unset", key)
       end
-      _, exit_status = run_config(*run_args)
-      return exit_status == 0
+      return result[:status] == 0
     end
 
     def unset_all(key, regex_string=nil)
-      run_args = ["--unset-all", key]
-      unless regex_string.nil?
-        run_args << regex_string
+      if regex_string
+        result = run_config("--unset-all", key, regex_string)
+      else
+        result = run_config("--unset-all", key)
       end
-      _, exit_status = run_config(*run_args)
-      return exit_status == 0
+      return result[:status] == 0
     end
 
     private
 
     def run_config(*args)
-      Open3.capture2("git", "config", *@scope, *args)
+      output, status = Open3.capture2("git", "config", *@scope, *args)
+      return {output: output, status: status}
     end
   end
 end
