@@ -1,10 +1,11 @@
-require "git_aliases/git_config"
+require "git_aliases/git"
+require "git_aliases/git/config"
 
 module GitAliases
   class Installation
     def initialize(root, options={})
       @root = root
-      @git_config = options[:git_config] || GitConfig.new
+      @git_config = options[:git_config] || Git::Config.new
     end
 
     def install_alias(alias_name)
