@@ -21,7 +21,7 @@ Git.run!("rev-list", "HEAD", "^#{base}", "--reverse").output.split("\n").each do
   puts "\n"
 
   success = system(*ARGV)
-  exit(command_result) unless success
+  exit false unless success
 end
 
 Git.run!("checkout", original_head)
