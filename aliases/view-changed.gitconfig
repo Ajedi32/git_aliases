@@ -1,4 +1,4 @@
 [alias]
-  view-changed = "!f() { AT_REFERENCE=$1; git diff --name-only ${AT_REFERENCE:-HEAD}~ ${AT_REFERENCE:-HEAD} | xargs `git config alias-config.viewer`; }; f"
+  view-changed = "!ruby `git config alias-config.alias-root`/lib/git_aliases/commands/view-changed.rb"
 [alias-config]
   viewer = vi
