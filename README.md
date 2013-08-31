@@ -34,3 +34,79 @@ use these commands:
 Note: Currently, "all" is treated like a normal alias. As a result, you can't
 uninstall individual aliases that were installed with "all". Instead, you have
 to uninstall "all" and then install the aliases that you want.
+
+
+Usage
+-----
+
+This library has a whole bunch of useful commands designed to streamline your
+workflow and make common tasks quick and painless. I use many of these myself
+on an everyday basis. Here are a few of my favorites:
+
+
+### `git temp`
+
+Stashes any uncommited changes to your current branch as a temporary commit.
+
+
+### `git pop`
+
+Equivalent to `git reset HEAD~`. Usful for undoing `git temp`.
+
+
+### `git l`
+
+An alternative to `git log` that produces very pretty output that makes it easy
+to see at a glance what your current branch looks like. The output looks like
+this (except with color):
+
+    * 7ee8988 - (HEAD, origin/master, origin/HEAD, master) Refactor do-each to use Ruby (22 hours ago) <Andrew Meyer>
+    * 68d79fa - Refactor GitConfig's methods (12 days ago) <Andrew Meyer>
+    * d15a742 - Suppress STDOUT from `git config` commands (12 days ago) <Andrew Meyer>
+    * 7ac2acb - Refactor install script (12 days ago) <Andrew Meyer>
+    *   690096f - Merge pull request #1 from Ajedi32/install_individual_aliases (12 days ago) <Ajedi32>
+    |\
+    | * 946c7e7 - Update README with instructions for installing individual aliases (12 days ago) <Andrew Meyer>
+    | * d543dd2 - Allow installation of individual aliases (12 days ago) <Andrew Meyer>
+    |/
+    * c06fd9a - License the repo under the MIT License (13 days ago) <Andrew Meyer>
+    * bd96039 - Add a README file (13 days ago) <Andrew Meyer>
+    * 48136f5 - Move aliases to subdirectory to keep things organized (13 days ago) <Andrew Meyer>
+    * ab0c5b5 - Add install script (13 days ago) <Andrew Meyer>
+    * ed75532 - Rename alias-settings to alias-config (13 days ago) <Andrew Meyer>
+    * ec5c3b6 - Rename branch-do-each to do-each and make it use rev-list (13 days ago) <Andrew Meyer>
+    * b14332a - Add test branch alias (2 weeks ago) <Andrew Meyer>
+    * 0871412 - Initial commit (4 weeks ago) <Andrew Meyer>
+
+There's also `git lg` which does basically the same thing, but doesn't try to
+limit the output to only the most recent commits.
+
+
+### `git recommit`
+
+Ammends your last commit without changing its commit message. Useful for making
+a quick change to a commit you just made.
+
+
+### `git split`
+
+Allows you to pull changes out of your most recent commit, splitting it in two.
+Works like `git add`.
+
+
+### `git unpushed`
+
+View a list of all branches not already pushed to a remote repository.
+
+
+### `git view-conflicts`
+
+Open all files with merge conflicts in your favorite text editor. (Configurable
+with `git config alias-config.viewer`.)
+
+
+### And more!
+
+Those are just a few of my favorite aliases from this collection. There's a
+whole bunch more that I didn't even mention. For a complete list, look in the
+[aliases](aliases) directory.
