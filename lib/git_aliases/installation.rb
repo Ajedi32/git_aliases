@@ -35,6 +35,8 @@ module GitAliases
     def install
       install_basics
       install_alias("all")
+      install_alias("install")
+      install_alias("uninstall")
     end
 
     def uninstall
