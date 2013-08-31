@@ -3,6 +3,10 @@ require "git_aliases/git/config"
 
 module GitAliases
   class Installation
+    def self.this
+      new(File.expand_path(File.join(File.dirname(__FILE__), "..", "..")))
+    end
+
     def initialize(root, options={})
       @root = root
       @git_config = options[:git_config] || Git::Config.new
