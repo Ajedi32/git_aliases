@@ -25,6 +25,8 @@ Git.run!("checkout", "-b", "git_aliases/split_commit", original_head)
 
 Git.run!("reset", "HEAD~")
 
+Git.run!("add", "-AN", "--", *ARGV)
+
 # Add what you want to take out of the original commit
 Git.interactive_run!("add", *add_options, "--", *ARGV)
 
