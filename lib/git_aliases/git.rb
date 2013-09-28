@@ -16,5 +16,17 @@ module GitAliases
       end
       return result
     end
+
+    def self.interactive_run(*args)
+      system("git", *args)
+    end
+
+    def self.interactive_run!(*args)
+      result = interactive_run(*args)
+      unless result
+        raise CommandFailedError.new("Interactive command: `git #{args.join(" ")}` failed!")
+      end
+      return result
+    end
   end
 end
