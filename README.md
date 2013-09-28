@@ -28,8 +28,8 @@ you want git_aliases installed and then execute the following commands.
 By default, all aliases are installed. If you only want to install some aliases,
 use these commands:
 
-	./git_aliases.rb uninstall all # To uninstall the default aliases
-	./git_aliases.rb install <alias 1> <alais 2> ...
+	git uninstall all # To uninstall the default aliases
+	git install <alias 1> <alias 2> ...
 
 Note: Currently, "all" is treated like a normal alias. As a result, you can't
 uninstall individual aliases that were installed with "all". Instead, you have
