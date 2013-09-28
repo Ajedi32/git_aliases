@@ -1,0 +1,2 @@
+[alias]
+  install = "!ruby `git config alias-config.alias-root`/lib/git_aliases/commands/install.rb"

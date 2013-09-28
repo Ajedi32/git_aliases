@@ -26,3 +26,5 @@
 	path = view-conflicts.gitconfig
 	path = view-diff.gitconfig
 	path = split.gitconfig
+	path = install.gitconfig
+	path = uninstall.gitconfig
