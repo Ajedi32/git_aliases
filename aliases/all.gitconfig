@@ -11,6 +11,7 @@
 	path = do-each.gitconfig
 	path = keep.gitconfig
 	path = l.gitconfig
+	path = la.gitconfig
 	path = lg.gitconfig
 	path = mkdir.gitconfig
 	path = patch-to.gitconfig
