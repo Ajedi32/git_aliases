@@ -1,0 +1,2 @@
+[alias]
+  delete = "!f() { git push origin --delete $1 && git branch -d $1; }; f"

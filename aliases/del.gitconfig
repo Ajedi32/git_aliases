@@ -1,0 +1,4 @@
+[alias]
+  del = "!git delete"
+[include]
+  path = delete.gitconfig
