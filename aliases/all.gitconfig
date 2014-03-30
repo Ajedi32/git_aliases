@@ -19,6 +19,7 @@
 	path = patch-to.gitconfig
 	path = pop.gitconfig
 	path = recommit.gitconfig
+	path = review.gitconfig
 	path = reword.gitconfig
 	path = s.gitconfig
 	path = stat.gitconfig
