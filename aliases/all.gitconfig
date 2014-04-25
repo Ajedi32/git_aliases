@@ -16,6 +16,7 @@
 	path = la.gitconfig
 	path = lg.gitconfig
 	path = mkdir.gitconfig
+	path = p.gitconfig
 	path = patch-to.gitconfig
 	path = pop.gitconfig
 	path = recommit.gitconfig
