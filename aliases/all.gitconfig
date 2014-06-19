@@ -5,6 +5,7 @@
 	path = c.gitconfig
 	path = changed.gitconfig
 	path = check.gitconfig
+	path = cm.gitconfig
 	path = co.gitconfig
 	path = conflicts.gitconfig
 	path = del.gitconfig
