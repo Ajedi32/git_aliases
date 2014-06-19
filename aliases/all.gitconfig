@@ -22,6 +22,7 @@
 	path = recommit.gitconfig
 	path = review.gitconfig
 	path = reword.gitconfig
+	path = rs.gitconfig
 	path = s.gitconfig
 	path = stat.gitconfig
 	path = temp.gitconfig
