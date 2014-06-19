@@ -1,0 +1,4 @@
+[alias]
+  mb = !git move-branch
+[include]
+  path = move-branch.gitconfig

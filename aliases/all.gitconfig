@@ -16,7 +16,9 @@
 	path = l.gitconfig
 	path = la.gitconfig
 	path = lg.gitconfig
+	path = mb.gitconfig
 	path = mkdir.gitconfig
+	path = move-branch.gitconfig
 	path = p.gitconfig
 	path = patch-to.gitconfig
 	path = pop.gitconfig
