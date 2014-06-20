@@ -6,7 +6,13 @@ module GitAliases
     CommandFailedError = Class.new(StandardError)
 
     def self.run(*args)
-      ReturnValue.new(*Open3.capture2e("git", *args))
+      debug_command(args)
+
+      result = ReturnValue.new(*Open3.capture2e("git", *args))
+
+      debug_result(result)
+
+      result
     end
 
     def self.run!(*args)
@@ -18,6 +24,7 @@ module GitAliases
     end
 
     def self.interactive_run(*args)
+      debug_command(args)
       system("git", *args)
     end
 
@@ -27,6 +34,16 @@ module GitAliases
         raise CommandFailedError.new("Interactive command: `git #{args.join(" ")}` failed!")
       end
       return result
+    end
+
+    private
+
+    def self.debug_command(args)
+      puts "Running git with #{args.inspect}" if GitAliases.debug?
+    end
+
+    def self.debug_result(result)
+      puts result.output if GitAliases.debug?
     end
   end
 end
