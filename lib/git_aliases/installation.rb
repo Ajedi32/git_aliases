@@ -1,5 +1,6 @@
 require "git_aliases/git"
 require "git_aliases/git/config"
+require "git_aliases/installation/alias"
 
 module GitAliases
   class Installation
@@ -14,24 +15,22 @@ module GitAliases
       @gitconfig = options[:gitconfig] || Git::Config.new
     end
 
+    def alias(alias_name)
+      Alias.new(alias_name, installation: self)
+    end
+
     def install_alias(alias_name)
       install_basics unless installed?
-      return true if alias_installed?(alias_name)
 
-      gitconfig_file = alias_file(alias_name)
-      gitconfig.set("include.path", gitconfig_file, Regexp.escape(gitconfig_file))
+      self.alias(alias_name).install
     end
 
     def uninstall_alias(alias_name)
-      return true unless alias_installed?(alias_name)
-
-      gitconfig_file = alias_file(alias_name)
-      gitconfig.unset("include.path", Regexp.escape(gitconfig_file))
+      self.alias(alias_name).uninstall
     end
 
     def alias_installed?(alias_name)
-      gitconfig_file = alias_file(alias_name)
-      gitconfig.exists?("include.path", Regexp.escape(gitconfig_file))
+      self.alias(alias_name).installed?
     end
 
     def install
@@ -42,7 +41,7 @@ module GitAliases
     end
 
     def uninstall
-      gitconfig.unset_all("include.path", "#{Regexp.escape(root)}/aliases/.*")
+      Alias.uninstall_all(installation: self)
       uninstall_basics
     end
 
@@ -62,10 +61,6 @@ module GitAliases
       return true unless installed?
       puts "Uninstalling git_aliases"
       gitconfig.unset("alias-config.alias-root", root)
-    end
-
-    def alias_file(alias_name)
-      "#{root}/aliases/#{alias_name}.gitconfig"
     end
   end
 end
