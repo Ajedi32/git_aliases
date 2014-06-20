@@ -7,9 +7,11 @@ module GitAliases
       new(File.expand_path(File.join(File.dirname(__FILE__), "..", "..")))
     end
 
+    attr_reader :root, :gitconfig
+
     def initialize(root, options={})
-      @root = root
-      @git_config = options[:git_config] || Git::Config.new
+      @root      = root
+      @gitconfig = options[:gitconfig] || Git::Config.new
     end
 
     def install_alias(alias_name)
@@ -17,19 +19,19 @@ module GitAliases
       return true if alias_installed?(alias_name)
 
       gitconfig_file = alias_file(alias_name)
-      @git_config.set("include.path", gitconfig_file, Regexp.escape(gitconfig_file))
+      gitconfig.set("include.path", gitconfig_file, Regexp.escape(gitconfig_file))
     end
 
     def uninstall_alias(alias_name)
       return true unless alias_installed?(alias_name)
 
       gitconfig_file = alias_file(alias_name)
-      @git_config.unset("include.path", Regexp.escape(gitconfig_file))
+      gitconfig.unset("include.path", Regexp.escape(gitconfig_file))
     end
 
     def alias_installed?(alias_name)
       gitconfig_file = alias_file(alias_name)
-      @git_config.exists?("include.path", Regexp.escape(gitconfig_file))
+      gitconfig.exists?("include.path", Regexp.escape(gitconfig_file))
     end
 
     def install
@@ -40,30 +42,30 @@ module GitAliases
     end
 
     def uninstall
-      @git_config.unset_all("include.path", "#{Regexp.escape(@root)}/aliases/.*")
+      gitconfig.unset_all("include.path", "#{Regexp.escape(root)}/aliases/.*")
       uninstall_basics
     end
 
     def installed?
-      @git_config.exists?("alias-config.alias-root", Regexp.escape(@root))
+      gitconfig.exists?("alias-config.alias-root", Regexp.escape(root))
     end
 
     private
 
     def install_basics
       return true if installed?
-      puts "Installing git_aliases in '#{@root}'"
-      @git_config.set("alias-config.alias-root", @root)
+      puts "Installing git_aliases in '#{root}'"
+      gitconfig.set("alias-config.alias-root", root)
     end
 
     def uninstall_basics
       return true unless installed?
       puts "Uninstalling git_aliases"
-      @git_config.unset("alias-config.alias-root", @root)
+      gitconfig.unset("alias-config.alias-root", root)
     end
 
     def alias_file(alias_name)
-      "#{@root}/aliases/#{alias_name}.gitconfig"
+      "#{root}/aliases/#{alias_name}.gitconfig"
     end
   end
 end
