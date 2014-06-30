@@ -1,5 +1,6 @@
 require "git_aliases/git"
 require "git_aliases/git/config"
+require "git_aliases/installation/basics"
 require "git_aliases/installation/alias"
 
 module GitAliases
@@ -20,7 +21,7 @@ module GitAliases
     end
 
     def install_alias(alias_name)
-      install_basics unless installed?
+      install unless installed?
 
       self.alias(alias_name).install
     end
@@ -34,7 +35,7 @@ module GitAliases
     end
 
     def install
-      install_basics
+      basics.install
       install_alias("all")
       install_alias("install")
       install_alias("uninstall")
@@ -42,25 +43,17 @@ module GitAliases
 
     def uninstall
       Alias.uninstall_all(installation: self)
-      uninstall_basics
+      basics.uninstall
     end
 
     def installed?
-      gitconfig.exists?("alias-config.alias-root", Regexp.escape(root))
+      basics.installed?
     end
 
     private
 
-    def install_basics
-      return true if installed?
-      puts "Installing git_aliases in '#{root}'"
-      gitconfig.set("alias-config.alias-root", root)
-    end
-
-    def uninstall_basics
-      return true unless installed?
-      puts "Uninstalling git_aliases"
-      gitconfig.unset("alias-config.alias-root", root)
+    def basics
+      @basics ||= Basics.new(installation_root: root, gitconfig: gitconfig)
     end
   end
 end
