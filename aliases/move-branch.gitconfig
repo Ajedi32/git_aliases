@@ -1,2 +1,2 @@
 [alias]
-  move-branch = !git checkout -B `git rev-parse --abbrev-ref HEAD`
+  move-branch = !git checkout --no-track -B `git rev-parse --abbrev-ref HEAD`
