@@ -22,7 +22,9 @@
 	path = p.gitconfig
 	path = patch-to.gitconfig
 	path = pop.gitconfig
+	path = rco.gitconfig
 	path = recommit.gitconfig
+	path = reset-checkout.gitconfig
 	path = review.gitconfig
 	path = reword.gitconfig
 	path = rs.gitconfig

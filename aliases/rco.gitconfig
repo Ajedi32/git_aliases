@@ -1,0 +1,4 @@
+[alias]
+  rco = !git reset-checkout
+[include]
+  path = reset-checkout.gitconfig
