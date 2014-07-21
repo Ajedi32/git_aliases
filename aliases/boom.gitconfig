@@ -1,0 +1,2 @@
+[alias]
+  boom = reset --hard
