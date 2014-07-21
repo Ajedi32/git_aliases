@@ -1,6 +1,7 @@
 [include]
 	path = amend-commit.gitconfig
 	path = b.gitconfig
+	path = backup.gitconfig
 	path = boom.gitconfig
 	path = br.gitconfig
 	path = c.gitconfig
