@@ -9,6 +9,7 @@
 	path = check.gitconfig
 	path = cm.gitconfig
 	path = co.gitconfig
+	path = cob.gitconfig
 	path = conflicts.gitconfig
 	path = del.gitconfig
 	path = delete.gitconfig
