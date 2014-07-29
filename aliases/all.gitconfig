@@ -15,6 +15,7 @@
 	path = delete.gitconfig
 	path = detach.gitconfig
 	path = do-each.gitconfig
+	path = fa.gitconfig
 	path = keep.gitconfig
 	path = l.gitconfig
 	path = la.gitconfig
