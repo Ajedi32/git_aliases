@@ -1,4 +1,4 @@
 [alias]
-  rco = !git reset-checkout
+  rco = !git patch-to
 [include]
-  path = reset-checkout.gitconfig
+  path = patch-to.gitconfig

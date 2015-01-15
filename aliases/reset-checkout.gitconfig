@@ -1,2 +1,4 @@
 [alias]
-  reset-checkout = read-tree -um
+  reset-checkout = !git patch-to
+[include]
+  path = patch-to.gitconfig
