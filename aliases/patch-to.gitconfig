@@ -1,2 +1,2 @@
 [alias]
-  patch-to = "!f() { START="`git rev-parse HEAD`"; git reset --keep $1; git reset "$START" --soft; }; f"
+  patch-to = "!f() { git diff --cached \"$@\" | git apply -R --index; }; f"
