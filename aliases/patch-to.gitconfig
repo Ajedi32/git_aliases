@@ -1,2 +1,2 @@
 [alias]
-  patch-to = "!f() { git diff --cached \"$@\" | git apply -R --index; }; f"
+  patch-to = "!bash -c 'git diff \"${1-HEAD}\" \"${@:2}\" | git apply -R; git diff --cached \"$@\" | git apply -R --cached;' --"
