@@ -1,0 +1,2 @@
+[alias]
+  ignore = "!f() { touch .gitignore; printf %\"s\\n\" \"$@\" >> .gitignore; }; f"
