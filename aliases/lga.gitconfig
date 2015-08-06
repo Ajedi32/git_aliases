@@ -1,0 +1,4 @@
+[alias]
+  lga = !git lg --all
+[include]
+  path = lg.gitconfig
