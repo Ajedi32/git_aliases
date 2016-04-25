@@ -1,9 +1,11 @@
 [include]
 	path = amend-commit.gitconfig
+	path = amend.gitconfig
 	path = b.gitconfig
 	path = backup.gitconfig
 	path = boom.gitconfig
 	path = br.gitconfig
+	path = branches.gitconfig
 	path = c.gitconfig
 	path = changed.gitconfig
 	path = check.gitconfig
@@ -14,6 +16,7 @@
 	path = del.gitconfig
 	path = delete.gitconfig
 	path = detach.gitconfig
+	path = discard.gitconfig
 	path = do-each.gitconfig
 	path = fa.gitconfig
 	path = ignore.gitconfig
@@ -30,15 +33,19 @@
 	path = pop.gitconfig
 	path = rco.gitconfig
 	path = recommit.gitconfig
+	path = remotes.gitconfig
 	path = reset-checkout.gitconfig
 	path = review.gitconfig
 	path = reword.gitconfig
 	path = rs.gitconfig
 	path = s.gitconfig
 	path = stat.gitconfig
+	path = tags.gitconfig
 	path = temp.gitconfig
 	path = test-each.gitconfig
+	path = uncommit.gitconfig
 	path = unpushed.gitconfig
+	path = unstage.gitconfig
 	path = view-changed.gitconfig
 	path = view-conflicts.gitconfig
 	path = view-diff.gitconfig
