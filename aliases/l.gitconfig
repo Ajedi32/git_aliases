@@ -1,4 +1,4 @@
 [alias]
-  l = !git --no-pager lg -15
+  l = !git --no-pager lg -$(expr `tput lines` - 2)
 [include]
   path = lg.gitconfig
