@@ -1,4 +1,4 @@
 [alias]
-  la = !git --no-pager lg -15 --all
+  la = !git --no-pager lg -$(expr `tput lines` - 5) --all
 [include]
   path = lg.gitconfig
