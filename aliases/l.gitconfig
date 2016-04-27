@@ -1,4 +1,4 @@
 [alias]
-  l = !git --no-pager lg -$(expr `tput lines` - 2)
+  l = "!f() { CONSOLE_SIZE=`tput lines`; LOG_ENTRIES=`expr $CONSOLE_SIZE - \\( $CONSOLE_SIZE \\* 5 \\) / 12 - 2`; git --no-pager lg -$LOG_ENTRIES; }; f"
 [include]
   path = lg.gitconfig
