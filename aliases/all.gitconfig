@@ -52,3 +52,4 @@
 	path = split.gitconfig
 	path = install.gitconfig
 	path = uninstall.gitconfig
+	path = whoami.gitconfig
