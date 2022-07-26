@@ -1,2 +1,2 @@
 [alias]
-  whoami = "!`git config alias-config.alias-root`/lib/git_aliases/commands/whoami.sh"
+  whoami = "!\"$(git config alias-config.alias-root)/lib/git_aliases/commands/whoami.sh\""
