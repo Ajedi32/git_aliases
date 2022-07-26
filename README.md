@@ -46,12 +46,12 @@ on an everyday basis. Here are a few of my favorites:
 
 ### `git temp`
 
-Stashes any uncommited changes to your current branch as a temporary commit.
+Stashes any uncommitted changes to your current branch as a temporary commit.
 
 
 ### `git pop`
 
-Equivalent to `git reset HEAD~`. Usful for undoing `git temp`.
+Equivalent to `git reset HEAD~`. Useful for undoing `git temp`.
 
 
 ### `git l`
@@ -84,7 +84,7 @@ limit the output to only the most recent commits.
 
 ### `git recommit`
 
-Ammends your last commit without changing its commit message. Useful for making
+Amends your last commit without changing its commit message. Useful for making
 a quick change to a commit you just made.
 
 
