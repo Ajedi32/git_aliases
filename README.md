@@ -125,7 +125,8 @@ Here are a few of my favorites:
 * `git cm "Commit message here"` - Commit with the given message
 * `git remotes` - List remotes
 * `git branches` - List branches
-* `git sync` - Sync with all remotes
+* `git tags` - List all tags
+* `git sync` - Sync all remote branches
 
 
 ### And more!
