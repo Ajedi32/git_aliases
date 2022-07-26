@@ -79,7 +79,8 @@ this (except with color):
     * 0871412 - Initial commit (4 weeks ago) <Andrew Meyer>
 
 There's also `git lg` which does basically the same thing, but doesn't try to
-limit the output to only the most recent commits.
+limit the output to only the most recent commits, and `git lga` which is the
+same as `lg` but shows all branches.
 
 
 ### `git recommit`
