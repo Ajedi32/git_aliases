@@ -95,6 +95,11 @@ Allows you to pull changes out of your most recent commit, splitting it in two.
 Works like `git add`.
 
 
+### `git ignore`
+
+Quickly append files to `.gitignore`
+
+
 ### `git unpushed`
 
 View a list of all branches not already pushed to a remote repository.
@@ -104,6 +109,23 @@ View a list of all branches not already pushed to a remote repository.
 
 Open all files with merge conflicts in your favorite text editor. (Configurable
 with `git config alias-config.viewer`.)
+
+
+### Lots of really simple aliases
+
+There are also a number of very simple aliases designed to make it easier to
+type common commands, or remember the names and syntax of less common ones.
+Here are a few of my favorites:
+
+* `git s`, `git stat` -> `git status`
+* `git rs` -> `git reset`
+* `git fa` - Fetch all remotes
+* `git review` - View diff of staged changes
+* `git reword` - Reword last commit message
+* `git cm "Commit message here"` - Commit with the given message
+* `git remotes` - List remotes
+* `git branches` - List branches
+* `git sync` - Sync with all remotes
 
 
 ### And more!
