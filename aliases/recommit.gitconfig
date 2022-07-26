@@ -1,2 +1,2 @@
 [alias]
-  recommit = commit --amend -C HEAD
+  recommit = commit --amend --no-edit
